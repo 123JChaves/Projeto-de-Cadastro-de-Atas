@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Atas</title>
+</head>
+<body>
+    <h1>Cadastro de Assinaturas</h1>
+    <form action="/assinatura/gravar" method="POST" enctype="multipart/form-data">
+        <label for="mumero">Número da Ata:</label>
+        <input type="text" id="numeroAta" name="numeroAta" required><br><br>
+
+        <label for="membro">Membro:</label>
+        <input type="text" id="membro" name="membro" required><br><br>
+
+        <label for="ata">Data da Assinatura:</label>
+        <input type="date" id="data" name="data" required><br><br>
+
+        <label for="arquivo">Arquivo da Assinatura:</label>
+        <input type="file" id="arquivo" name="arquivo" required><br><br>
+
+        <input type="submit" value="Cadastrar Assinatura">
+    </form>
+</body>
+</html>

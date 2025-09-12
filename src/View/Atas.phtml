@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Atas</title>
+</head>
+<body>
+    <h1>Cadastro de Atas</h1>
+    <form action="/atas/gravar.php" method="POST" enctype="multipart/form-data">
+        <label for="titulo">Número da Ata:</label>
+        <input type="text" id="titulo" name="titulo" required><br><br>
+
+        <label for="data">Data da Assembleia:</label>
+        <input type="date" id="data" name="data" required><br><br>
+
+        <label for="local">Local da Assembleia:</label>
+        <input type="text" id="local" name="local" required><br><br>
+
+        <label for="arquivo">Arquivo da Ata:</label>
+        <input type="file" id="arquivo" name="arquivo" required><br><br>
+
+        <input type="submit" value="Cadastrar Ata">
+    </form>
+</body>
+</html>
