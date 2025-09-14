@@ -11,13 +11,13 @@ require_once __DIR__. '/../vendor/autoload.php';
 $uri = $_SERVER['REQUEST_URI'];
 
 $routes = [
-    '/ata' => [new AtaController(), 'render'],
-    '/assinatura' => [new AssinaturaController(), 'render'],
-    '/lista' => [new ListaDeAtasController(), 'render'],
-    '/membros' => [new CadastroMembrosController, 'render'],
-    '/assinatura/gravar' => [new AssinaturaController(), 'gravar'],
-    "/atas/gravar" => [new AtaController(), 'gravar'],
-    '/membros/gravar' => [new CadastroMembrosController, 'gravar'],
+    '/Ata' => [new AtaController(), 'render'],
+    '/Assinatura' => [new AssinaturaController(), 'render'],
+    '/Lista' => [new ListaDeAtasController(), 'render'],
+    '/CadastroMembros' => [new CadastroMembrosController, 'render'],
+    '/Assinatura/gravar' => [new AssinaturaController(), 'gravar'],
+    "/Ata/gravar" => [new AtaController(), 'gravar'],
+    '/CadastroMembros/gravar' => [new CadastroMembrosController, 'gravar'],
 ];
 
 $controller = $routes[$uri] ?? [new NotFoundController(), 'render'];
