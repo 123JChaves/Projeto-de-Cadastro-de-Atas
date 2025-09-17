@@ -25,8 +25,9 @@ class Assinatura
     #[ManyToOne()]
     private Ata $ata;
 
-    public function __construct(DateTime $dataAssinatura, Membro $membro, Ata $ata)
+    public function __construct(int $id, DateTime $dataAssinatura, Membro $membro, Ata $ata)
     {
+        $this->id = $id;
         $this->dataAssinatura = $dataAssinatura;
         $this->membro = $membro;
         $this->ata = $ata;
@@ -67,7 +68,7 @@ class Assinatura
     {
         $mail = new PHPMailer(true);
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
+        $mail->Host = 'jchavesbaptista@gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = '<EMAIL>';
         $mail->Password = '<PASSWORD>';

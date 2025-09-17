@@ -5,9 +5,14 @@ namespace App\Model;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Embeddable;
 use InvalidArgumentException;
+use App\Model\Membro;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\OneToOne;
+
 #[Embeddable]
 class Email
 {
+    
     #[Column()]
     private string $email;
 
