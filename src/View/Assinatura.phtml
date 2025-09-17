@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Atas</title>
-</head>
+    <link rel="stylesheet" type="text/css" href="./../src/View/styleAssinatura.css">
 <body>
     <h1>Cadastro de Assinaturas</h1>
     <form action="/Assinatura/gravar" method="POST" enctype="multipart/form-data">
-        <label for="mumero">Número da Ata:</label>
-        <input type="text" id="numeroAta" name="numeroAta" required><br><br>
+        <label for="mumero"><b>Número da Ata:</b></label><br>
+        <input type="text" id="numeroAta" name="numeroAta" size="50" maxlength="40" 
+        placeholder="Número da Ata" autocomplete="off" required class="formulario"><br><br>
 
-        <label for="membro">Membro:</label>
-        <input type="text" id="membro" name="membro" required><br><br>
+        <label for="membro"><b>Membro:</b></label><br>
+        <input type="text" id="membro" name="membro" size="50" maxlength="40" 
+        placeholder="Nome do Membro" autocomplete="off" required class="formulario"><br><br>
 
-        <label for="ata">Data da Assinatura:</label>
+        <label for="email"><b>Digite o e-mail do Membro:</b></label><br>
+		<input type="email" name="email" id="email" size="50" maxlength="50" placeholder="Digite um e-mail válido"
+        autocomplete="off" required class="formulario" inputmode="email"><br><br>
+        <button type="submit" class="btn-submit">
+            Enviar Email de Assinatura
+        </button>
+        <br><br>
+
+        <label for="ata"><b>Data da Assinatura:</b></label><br>
         <input type="date" id="data" name="data" required><br><br>
 
-        <label for="arquivo">Arquivo da Assinatura:</label>
+        <label for="arquivo"><b>Arquivo da Assinatura:</b></label><br>
         <input type="file" id="arquivo" name="arquivo" required><br><br>
+
 
         <input type="submit" value="Cadastrar Assinatura">
     </form>

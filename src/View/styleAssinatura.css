@@ -1,0 +1,32 @@
+body {
+	font-family: Arial;
+}
+label {
+	font-weight: bold;
+}
+.formulario {
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #CCC;
+}
+label, .formulario {
+	margin: 10px 0;
+}
+.btn-submit, .btn-reset {
+	border: none;
+	padding: 10px 20px;
+	border-radius: 20px;
+	color: #FFF;
+}
+.btn-submit {
+	background: green;
+}
+.btn-reset {
+	background: #F00;
+}
+.formulario:focus {
+	background: lightyellow;
+}
+

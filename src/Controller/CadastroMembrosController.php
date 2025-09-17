@@ -7,6 +7,7 @@ use App\Model\Endereço;
 use App\Model\EstadoCivil;
 use App\Model\Idade;
 use App\Model\Membro;
+use DateTime;
 
 class CadastroMembrosController implements Controller
 {
@@ -25,7 +26,7 @@ class CadastroMembrosController implements Controller
 
             $membro = new Membro(
                 nome: $_POST['nome'],
-                idade: new Idade($_POST['dataNascimento']),
+                idade: new Idade(DateTime::createFromFormat('d/m/Y', $_POST['dataNascimento'])),
                 endereço: $endereco,
                 email: new Email($_POST['email']),
                 estadoCivil: EstadoCivil::from($_POST['estadoCivil']),
@@ -39,9 +40,9 @@ class CadastroMembrosController implements Controller
         }
 
         $this->render();
+
     
-    }
-    
+    }    
 
     public  function render(): void
     {

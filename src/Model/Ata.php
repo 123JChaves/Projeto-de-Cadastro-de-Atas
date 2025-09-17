@@ -11,15 +11,16 @@ use Doctrine\ORM\Mapping\Id;
 #[Entity()]
 class Ata
 {
-    #[Column(), Id, GeneratedValue()]
+    #[Column, Id, GeneratedValue()]
     private int $id;
     #[Column(nullable: false, unique: true)]
     private int $numeroAta;
     #[Column]
     private DateTime $dataAta;
 
-    public function __construct(int $numeroAta, DateTime $dataAta)
+    public function __construct(int $id, int $numeroAta, DateTime $dataAta)
     {
+        $this->id = $id;
         $this->numeroAta = $numeroAta;
         $this->dataAta = $dataAta;
     }
@@ -52,4 +53,5 @@ class Ata
         $repository = $entityManager->getRepository(Ata::class);
         return $repository->findAll();
     }
+
 }

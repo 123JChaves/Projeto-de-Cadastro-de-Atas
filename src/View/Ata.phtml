@@ -8,19 +8,26 @@
 <body>
     <h1>Cadastro de Atas</h1>
     <form action="/Ata/gravar" method="POST" enctype="multipart/form-data">
-        <label for="titulo">Número da Ata:</label>
-        <input type="text" id="titulo" name="titulo" required><br><br>
+        <label for="titulo"><b>Número da Ata:</b></label><br></br>
+        <input type="text" id="titulo" name="titulo" size="50" maxlength="40" 
+        placeholder="Número da Ata" autocomplete="off" required class="formulario"><br><br>
 
-        <label for="data">Data da Assembleia:</label>
-        <input type="date" id="data" name="data" required><br><br>
+        <label for="data"><b>Data da Assembleia:</b></label><br></br>
+        <input type="text" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" placeholder="DD/MM/AAAA"
+        id="dataAta" name="dataAta" size="50" maxlength="40" placeholder="Data da Assembleia" 
+        autocomplete="off" required class="formulario"><br><br>
 
-        <label for="local">Local da Assembleia:</label>
-        <input type="text" id="local" name="local" required><br><br>
 
-        <label for="arquivo">Arquivo da Ata:</label>
+        <label for="local"><b>Local da Assembleia:</b></label><br></br>
+        <input type="text" id="local" name="local" size="50" maxlength="40" 
+        placeholder="Local da Assembleia" autocomplete="off" required class="formulario"><br><br>
+
+        <label for="arquivo"><b>Arquivo Ata:</b></label><br></br>
         <input type="file" id="arquivo" name="arquivo" required><br><br>
 
-        <input type="submit" value="Cadastrar Ata">
+        <a><b>Cadastrar Ata</b></a><br>
+        <input type="submit" value="Submit" size="20" maxlength="40">
+
     </form>
 </body>
 </html>

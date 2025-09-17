@@ -10,6 +10,8 @@ use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\ManyToOne;
+use PHPMailer\PHPMailer\PHPMailer;
+use Firebase\JWT\JWT;
 
 #[Entity()]
 class Assinatura
@@ -59,4 +61,34 @@ class Assinatura
         $repository = $entityManager->getRepository(Assinatura::class);
         return $repository->findAll();
     }
+
+    public function enviarEmail()
+
+    {
+        $mail = new PHPMailer(true);
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = '<EMAIL>';
+        $mail->Password = '<PASSWORD>';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
+        $mail->setFrom('<EMAIL>', 'Ata');
+        $mail->addAddress($this->membro->getEmail()->getEmail());
+        $mail->isHTML(true);
+        $mail->Subject = 'Assinatura da Ata';
+        $mail->Body = 'A sua assinatura foi realizada com sucesso!';
+        $mail->send();
+        return true;
+        
+    }
+
+    public function autenticarEmail()
+    {
+        $token = JWT::encode($this->membro['id'], 'secret', 'HS256');
+        $this->enviarEmail();
+        $this->save();
+        return $token;
+    }
+
 }

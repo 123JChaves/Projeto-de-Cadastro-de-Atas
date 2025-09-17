@@ -5,7 +5,6 @@ namespace App\Model;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Embeddable;
 use InvalidArgumentException;
-
 #[Embeddable]
 class Email
 {
@@ -29,5 +28,16 @@ class Email
     public function __toString(): string
     {
         return $this->email;
+    }
+
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): void
+    {
+        $this->validade($email);
+        $this->email = $email;
     }
 }

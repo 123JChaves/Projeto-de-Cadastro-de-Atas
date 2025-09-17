@@ -17,12 +17,13 @@ class Idade
 
     public function __construct(DateTime $dataDeNascimento)
     {
+        
         $this->hoje = new DateTime();
-
 
         $this->dataDeNascimento = $dataDeNascimento;
 
         $this->validate($dataDeNascimento);
+
     }
 
     private function validate(): void
